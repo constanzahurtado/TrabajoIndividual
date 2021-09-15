@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./estilo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm bg-info navbar-dark">
+        <nav class="navbar navbar-expand-sm bg-info navbar-dark"> 
             <a class="navbar-brand" href="#">
                 <img src="imagenes/sello.png" alt="sellologo" id="imagencab" style="width:40px;">
             </a>
@@ -49,36 +52,37 @@
         <h3>Formulario de Contacto</h3>
         <p>Complete el formulario para contactarse con nosotros. Responderemos lo antes posible.</p>
         <section class="container-fluid">
-            <div class="container contenedor">
-                <div class="row">
-                    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 nombre">
-                        <label for="nombre">Nombre: </label>
-                    </div>
-                    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 nombre">
-                        <label for="apellido">Apellido: </label>
-                    </div>
-                    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 nombre">
-                        <label for="email">Correo electrónico: </label>
-                    </div>
-                    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 nombre">
-                        <label for="mensaje">Mensaje: </label>
-                    </div>
+            <form>
+                <div class="form-group col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" class="form-control" placeholder="Nombre..." id="txtnombre">
                 </div>
-                <div class="row">
-                    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
-                        <input type="text" name="nombre" id="txtnombre" placeholder="Nombre..." class="input">
-                    </div>
-                    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
-                        <input type="text" name="apellido" id="txtapellido" placeholder="Apellido..." class="input">
-                    </div>
-                    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
-                        <input type="text" name="email" id="txtemail" placeholder="Correo..." class="input">
-                    </div>
-                    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
-                        <textarea name="mensaje" id="txtmensaje" placeholder="Escriba su mensaje..." class="textarea"></textarea>
-                    </div>
-                </div>
-            </div>
+                <div class="form-group col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" class="form-control" placeholder="Apellido..." id="txtapellido">
+                  </div>
+                  <div class="form-group col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control" placeholder="Email..." id="txtemail">
+                  </div>
+                  <div class="form-group col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6"></div>
+                  <label for="lista ">Seleccione el motivo de su mensaje:</label>
+                  <select id ="select2" name="lista" multiple="multiple">
+                      <option value="guia">Sobre guía de usuario</option>
+                      <option value="informacion">Información adicional</option>
+                      <option value="consulta">Consulta uso calculadora</option>
+                      <option value="reclamo">Reclamos</option>
+                      <option value="sugerencias">Sugerencias</option>
+                      <option value="error">Reporte de Errores</option>
+                      <option value="otros">Otros</option>
+                  </select>
+              </div>
+               <div class="form-group col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea class="form-control" rows="5" id="txtmensaje" name="mensaje"></textarea>
+                  </div col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </form>
         </section>
     </main>
     <section>
@@ -96,14 +100,16 @@
         </footer>
     </section>
     </main>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    <script type="text/javascript">
+        $(document).ready(function() {$('#select2').select2();});
+    </script>
+    </script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
 </body>
 </html>
+

@@ -51,40 +51,6 @@ footer{
     display: inline-block;
 } 
 
-input[type=text], textarea{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid white;
-    border-radius: 4px;
-    resize: vertical;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-input[type=submit]{
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-}
-
-.nombre{
-    text-align: left;
-    margin-top: 5px;
-    margin-left: 30px;
-}
-
-.input{
-    margin-top: 20px;
-}
-
-.textarea{
-    margin-top: 30px;
-    height:200px
-}
-
 .imagenrecurso{
     max-width: 300px;
     max-height: 200px;
