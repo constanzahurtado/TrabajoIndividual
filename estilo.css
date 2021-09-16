@@ -28,7 +28,8 @@ main{
     font-style: italic;
     border-radius: 5px;
     background-color: rgb(40, 184, 194);
-    padding: 10px;
+    align-items: center;
+    justify-content: center;
 }
     
 footer{
@@ -55,7 +56,17 @@ footer{
     max-width: 300px;
     max-height: 200px;
 }
-      
+
+.centrarformulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .formulario {
+    width: 450px;
+  }
 
 
 
